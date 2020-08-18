@@ -102,7 +102,7 @@ public class XDMApp implements DownloadListener, DownloadWindowListener, Compara
 	private ArrayList<VideoPopupItem> itemList = new ArrayList<>();
 
 	public static void instanceStarted() {
-		Logger.log("instance starting...");
+		Logger.log("[Biggee Build]instance starting...");
 		final XDMApp app = XDMApp.getInstance();
 		EventQueue.invokeLater(new Runnable() {
 			@Override

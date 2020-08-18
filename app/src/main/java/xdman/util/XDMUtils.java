@@ -361,6 +361,7 @@ public class XDMUtils {
 	public static void addToStartup() {
 		try {
 			int os = detectOS();
+			Logger.log("[Biggee Build]addToStartup OS:"+os);
 			if (os == LINUX) {
 				LinuxUtils.addToStartup();
 			} else if (os == WINDOWS) {

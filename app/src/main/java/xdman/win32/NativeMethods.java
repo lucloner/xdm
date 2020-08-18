@@ -17,10 +17,11 @@ public class NativeMethods {
 
 	private NativeMethods() {
 		String dllPath = new File(XDMUtils.getJarFile().getParentFile(), "xdm_native.dll").getAbsolutePath();
+		Logger.log("[Biggee Build]loadJNI:"+dllPath);
 		try {
 			System.load(dllPath);
 		} catch (Exception e) {
-			Logger.log(e);
+			Logger.log("loadJNI:"+e);
 		}
 	}
 

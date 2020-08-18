@@ -25,6 +25,9 @@
             }
         }
     }
+    var url=xdmHost;
+    var ustr=xdmHost;
+    var port=9614;
 
     var processRequest = function (request, response) {
         if (shouldInterceptFile(request, response)) {

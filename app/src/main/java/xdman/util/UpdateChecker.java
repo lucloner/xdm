@@ -22,8 +22,8 @@ public class UpdateChecker {
 
 	public static int getUpdateStat() {
 		System.out.println("checking for app update");
-		if (isAppUpdateAvailable())
-			return APP_UPDATE_AVAILABLE;
+		// if (isAppUpdateAvailable())
+		// 	return APP_UPDATE_AVAILABLE;
 		return NO_UPDATE_AVAILABLE;
 //		int stat = isComponentUpdateAvailable();
 //		System.out.println("Stat: " + stat);
@@ -40,7 +40,7 @@ public class UpdateChecker {
 	}
 
 	private static boolean isAppUpdateAvailable() {
-		return isUpdateAvailable(XDMApp.APP_VERSION);
+		return false;	//isUpdateAvailable(XDMApp.APP_VERSION);
 	}
 
 	// return 1 is no update required
@@ -50,7 +50,7 @@ public class UpdateChecker {
 		System.out.println("current component version: " + componentVersion);
 		if (componentVersion == null)
 			return -1;
-		return isUpdateAvailable(componentVersion) ? 0 : 1;
+		return -1;	//isUpdateAvailable(componentVersion) ? 0 : 1;
 	}
 
 	public static String getComponentVersion() {
@@ -86,6 +86,10 @@ public class UpdateChecker {
 	}
 
 	private static boolean isUpdateAvailable(String version) {
+		if(version!=null){
+			Logger.log("[Biggee Build]skip update checking...");
+			return false;
+		}
 		JavaHttpClient client = null;
 		try {
 			client = new JavaHttpClient(
